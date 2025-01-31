@@ -49,7 +49,7 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="password" value="Password"/>
+          <con:entry key="password" value="Password123"/>
           <con:entry key="username" value="Login"/>
         </con:parameters>
         <con:parameterOrder>
@@ -111,7 +111,7 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
           <con:entry key="sessionid" value="${Login#Response#$['sessionid']}"/>
-          <con:entry key="searchstring" value="Item 1"/>
+          <con:entry key="searchstring" value="Item 2"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>sessionid</con:entry>
