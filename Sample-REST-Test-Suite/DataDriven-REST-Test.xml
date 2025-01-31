@@ -77,8 +77,8 @@ NOTE: Check the Test Case transaction log after the execution of the test to vie
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="password" value="${Data Source#password}"/>
-          <con:entry key="username" value="${Data Source#username}"/>
+          <con:entry key="password" value="${Data Source#password1}"/>
+          <con:entry key="username" value="${Data Source#username1}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>username</con:entry>
@@ -138,7 +138,7 @@ NOTE: Check the Test Case transaction log after the execution of the test to vie
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry xmlns="http://eviware.com/soapui/config" key="sessionid" value="${Login#Response#$['sessionid']}"/>
+          <con:entry key="sessionid" value="${Login#Response#$['sessionid1']}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>sessionid</con:entry>
