@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="/test" method="GET" resourcePath="/test" id="6bd69cdd-816f-4292-af3a-80ee9f7cdc93">
+  <con:settings>
+    <con:setting id="6bd69cdd-816f-4292-af3a-80ee9f7cdc93fileName">%2Ftest</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 1</con:defaultResponse>
+  <con:dispatchStyle>CONDITIONAL_MATCH</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath xsi:nil="true"/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer xsi:nil="true"/>
+  <con:routeEnabled>false</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:saveRoutedResponse>false</con:saveRoutedResponse>
+  <con:response name="Response 1" id="646be2f2-def9-49d5-b8be-2c73642e6c3f" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Hello" : "Mike" }</con:responseContent>
+  </con:response>
+  <con:response name="Response 1 1" id="dd5acfb0-a9c1-4d5c-b178-7ce5d7db2fa2" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Hello" : "Mike" }</con:responseContent>
+  </con:response>
+</con:restMockAction>
