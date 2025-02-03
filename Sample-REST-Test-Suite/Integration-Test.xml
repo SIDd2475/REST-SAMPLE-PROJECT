@@ -28,9 +28,9 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="Ecommerce" resourcePath="/login/" methodName="Login" xsi:type="con:RestRequestStep">
       <con:restRequest name="Login" id="af9f46ad-d5ad-4c3c-bcde-e2f266c3dc2c" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:endpoint>http://localhost:80845</con:endpoint>
         <con:request>{"sample" : "1 "}</con:request>
         <con:originalUri>http://localhost/login</con:originalUri>
         <con:assertion type="JsonPath Existence Match" id="3e937dfa-57ab-441d-9527-84c33802b690" name="Check for existence of [sessionid]">
