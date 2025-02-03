@@ -6,7 +6,7 @@
     <con:setting id="daddf064-83c5-407b-a427-84e10c74dab9fileName">buy</con:setting>
   </con:settings>
   <con:defaultResponse>Item 1 Response</con:defaultResponse>
-  <con:dispatchStyle>QUERY_MATCH</con:dispatchStyle>
+  <con:dispatchStyle>RANDOM</con:dispatchStyle>
   <con:dispatchConfig/>
   <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
 if (!queryString) {

@@ -2,7 +2,7 @@
 <con:restMockAction xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="/test" method="POST" resourcePath="/test" id="0ed1bedd-2273-4f9a-8483-3fa78fe34062" logFilePath="/Users/siddeshwar.mali/.readyapi/logs/EcommerceVirt__test_conditional-match-merge_1738566843053.log">
   <con:settings>
     <con:setting id="040a479e-0f6a-4ca3-8a53-18cc2de1f9effileName">%2Ftest1</con:setting>
-    <con:setting id="0ed1bedd-2273-4f9a-8483-3fa78fe34062fileName">%2Ftest1</con:setting>
+    <con:setting id="0ed1bedd-2273-4f9a-8483-3fa78fe34062fileName">%2Ftest-2</con:setting>
   </con:settings>
   <con:defaultResponse>TC2</con:defaultResponse>
   <con:dispatchStyle>CONDITIONAL_MATCH</con:dispatchStyle>

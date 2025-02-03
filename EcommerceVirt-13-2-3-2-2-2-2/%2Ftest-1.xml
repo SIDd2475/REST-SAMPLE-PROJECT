@@ -3,7 +3,7 @@
   <con:settings>
     <con:setting id="040a479e-0f6a-4ca3-8a53-18cc2de1f9effileName">%2Ftest1</con:setting>
     <con:setting id="2744410a-7e8a-4194-84a6-0b1819e2f9dafileName">%2Ftest1</con:setting>
-    <con:setting id="19598d1d-3776-4d89-80a5-b9fb6c9111adfileName">%2Ftest1</con:setting>
+    <con:setting id="19598d1d-3776-4d89-80a5-b9fb6c9111adfileName">%2Ftest-1</con:setting>
   </con:settings>
   <con:defaultResponse>TC2</con:defaultResponse>
   <con:dispatchStyle>CONDITIONAL_MATCH</con:dispatchStyle>
