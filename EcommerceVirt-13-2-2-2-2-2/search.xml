@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" name="search" method="GET" resourcePath="/search" id="83157979-f226-47fd-9ecd-23360eb52151">
+  <con:settings>
+    <con:setting id="92956b11-db13-4f2a-90f3-f11bc6a1950bfileName">search</con:setting>
+    <con:setting id="726d9607-d507-4c87-930f-ed674247a767fileName">search</con:setting>
+    <con:setting id="07bbbc5b-b327-4e87-9abc-76b00e0374dffileName">search</con:setting>
+    <con:setting id="83157979-f226-47fd-9ecd-23360eb52151fileName">search</con:setting>
+  </con:settings>
+  <con:defaultResponse>Search Response</con:defaultResponse>
+  <con:dispatchStyle>CONDITIONAL_MATCH</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>import java.net.URLDecoder;
+def queryString = mockRequest.getRequest().getQueryString()
+if (!queryString) {
+    return "Missing required query parameters"
+}
+
+String[] fields = queryString.split("&amp;");
+String[] kv;
+
+HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+for (int i = 0; i &lt; fields.length; ++i){
+    kv = fields[i].split("=");
+    if (2 == kv.length)
+     params.put(kv[0], kv[1]); 
+}
+
+def sessionid = params.get("sessionid")
+
+// check
+if( !context.hasProperty( sessionid ))
+ return "Invalid Session Id Fault"
+
+def searchstring = URLDecoder.decode(params.get("searchstring"), "UTF-8")
+
+if (searchstring == "all") 
+ return "WildCard Response"
+else if (searchstring == "Item 1") 
+ return "Item 1 Response"
+else if (searchstring == "Item 2") 
+ return "Item 2 Response"
+else if (searchstring == "Item 3") 
+ return "Item 3 Response"
+else if (searchstring == "Item 4") 
+ return "Item 3 Response"
+else if (searchstring == "Item 5") 
+ return "Item 5 Response"
+else
+return "Unknown Response" 
+	
+
+
+return "Search Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:response name="Search Response" id="f35ac0e3-8208-4618-831c-21d6a8024ea8" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": [
+      {
+        "id": "1",
+        "description": "One handy protocol droid.",
+        "price": "1"
+      },
+      {
+        "id": "2",
+        "description": "Item nr 2",
+        "price": "2"
+      },
+      {
+        "id": "3",
+        "description": "Item nr 3",
+        "price": "3"
+      },
+      {
+        "id": "4",
+        "description": "${item4description}",
+        "price": "4"
+      },
+      {
+        "id": "5",
+        "description": "Item nr 5",
+        "price": "5"
+      }
+    ]
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Session Id Fault" id="4852af7a-a2a9-4c64-959d-2e182b655fa8" httpResponseStatus="200" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Invalid Session Id"}</con:responseContent>
+  </con:response>
+  <con:response name="Item 1 Response" id="40d4e6d8-0f32-4544-8b17-acf6bf511152" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "Item 1",
+      "description": "One handy protocol droid. This droid is fluent in over six million forms of communication and has a lovely golden color. Built by an enthusiast. Mindwiped only once. Can be carried on your back.",
+      "price": "1"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 2 Response" id="0b7fce22-fd38-46bf-ab9f-3452c9467086" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "Item 2",
+      "description": "Box of chocolate with several popular items. Covered in Glucose. Recommended safety distance when eating Spring Surprise, 10 feet.",
+      "price": "1.99"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 3 Response" id="8c3fa431-8580-491e-8498-44f99895520f" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "Item 3",
+      "description": "One towel. Massively useful thing. Impress the strags with this amazing cloth!",
+      "price": "2.99"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 4 Response" id="0ee2a20c-9b8c-42c1-a276-0b8a10a19aa1" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "Item 4",
+      "description": "Ono-Sendai 7. The newest cowboy tech from Hosaka. Break the ICE with this conversation piece.",
+      "price": "4.99"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 5 Response" id="4b44ad5a-1f04-4af8-8f13-64f8da222271" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": {
+      "id": "Item 5",
+      "description": "Ready! API. All your needs for API readiness",
+      "price": "499"
+    }
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Search Fault Response" id="7ec8effc-9dc1-406d-b0a4-a462d67f8b56" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"No Result" : "The search returned no items"}</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="06dbe462-b184-4895-ac62-29369f490fee" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Client" : "Unknown Search String" }</con:responseContent>
+  </con:response>
+  <con:response name="WildCard Response" id="deae9956-4993-4d5e-a908-6d9968e7071c" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": [
+      {
+        "id": "1",
+        "description": "One handy protocol droid.",
+        "price": "1"
+      },
+      {
+        "id": "2",
+        "description": "Item nr 2",
+        "price": "2"
+      },
+      {
+        "id": "3",
+        "description": "Item nr 3",
+        "price": "3"
+      },
+      {
+        "id": "4",
+        "description": "${item4description}",
+        "price": "4"
+      },
+      {
+        "id": "5",
+        "description": "Item nr 5",
+        "price": "5"
+      }
+    ]
+  }
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

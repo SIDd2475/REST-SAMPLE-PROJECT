@@ -5,7 +5,7 @@
     <con:setting id="726d9607-d507-4c87-930f-ed674247a767fileName">search</con:setting>
   </con:settings>
   <con:defaultResponse>Search Response</con:defaultResponse>
-  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchStyle>CONDITIONAL_MATCH</con:dispatchStyle>
   <con:dispatchConfig/>
   <con:dispatchPath>import java.net.URLDecoder;
 def queryString = mockRequest.getRequest().getQueryString()
