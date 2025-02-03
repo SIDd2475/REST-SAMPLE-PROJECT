@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" name="buy" method="GET" resourcePath="/buy" id="db53bd38-93b9-4990-b263-2687ea3acf0e">
+  <con:settings>
+    <con:setting id="ac8250b4-a453-4acb-ace2-9cb35ecec996fileName">buy</con:setting>
+    <con:setting id="3436b671-55f7-47d8-85d7-0ccdca7da492fileName">buy</con:setting>
+    <con:setting id="db53bd38-93b9-4990-b263-2687ea3acf0efileName">buy</con:setting>
+  </con:settings>
+  <con:defaultResponse>Item 1 Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
+if (!queryString) {
+    return "Missing required query parameters"
+}
+
+String[] fields = queryString.split("&amp;");
+String[] kv;
+
+HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+for (int i = 0; i &lt; fields.length; ++i){
+    kv = fields[i].split("=");
+    if (2 == kv.length)
+     params.put(kv[0], kv[1]); 
+}
+
+if (!params.containsKey("buystring")) {
+     return "Missing buystring parameter"
+}
+def buystring = URLDecoder.decode(params.get("buystring"), "UTF-8")
+
+if (buystring == "all") 
+ return "WildCard Response"
+else if (buystring == "Item 1") 
+ return "Item 1 Response"
+else if (buystring == "Item 2") 
+ return "Item 2 Response"
+else if (buystring == "Item 3") 
+ return "Item 3 Response"
+else if (buystring == "Item 4") 
+ return "Item 3 Response"
+else if (buystring == "Item 5") 
+ return "Item 5 Response"
+else
+return "Unknown Response" 
+	
+
+
+return "Search Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:response name="Item 1 Response" id="404218d6-bcbd-4911-8f32-fce9d5bffd78" httpResponseStatus="200" mediaType="application/json" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "id": "Item 1",
+    "stockStatus": "1 unit",
+    "expectedDelivery": "2000 years from now"
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 2 Response" id="3f391e80-d7c7-4087-a385-e0be70ffae4e" httpResponseStatus="200" mediaType="application/json" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "id": "Item 2",
+    "stockStatus": "10 000 boxes",
+    "expectedDelivery": "1 week"
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 3 Response" id="1bf7beb8-4471-4120-9186-7c4702cf4bcc" httpResponseStatus="200" mediaType="application/json" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "id": "Item 3",
+    "stockStatus": "4 towels",
+    "expectedDelivery": "Any day now..."
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 4 Response" id="21f8b35d-02d5-4961-a9d3-e5b2b3f10e19" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "id": "Item 4",
+    "stockStatus": "1 unit",
+    "expectedDelivery": "In the near future."
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Item 5 Response" id="25396e14-fc09-4e7f-92c3-46c1a714e7be" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "purchasestatus": {
+    "id": "Item 5",
+    "stockStatus": "1 license",
+    "expectedDelivery": "You should already have it."
+  }
+}</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Session Id Fault" id="e1727b48-fec1-404e-aaad-2dd084f22dc3" httpResponseStatus="401" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Client" : "Invalid Session Id" }</con:responseContent>
+  </con:response>
+  <con:response name="Unknown Response" id="c8ba7219-1060-4956-bc8e-21ff4af48451" httpResponseStatus="501" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="WildCard Response" id="65f5b34a-6f78-4030-b8c8-53ae734374ec" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "result": {
+    "item": [
+      {
+        "id": "1",
+        "description": "One handy protocol droid.",
+        "price": "1"
+      },
+      {
+        "id": "2",
+        "description": "Item nr 2",
+        "price": "2"
+      },
+      {
+        "id": "3",
+        "description": "Item nr 3",
+        "price": "3"
+      },
+      {
+        "id": "4",
+        "description": "${item4description}",
+        "price": "4"
+      },
+      {
+        "id": "5",
+        "description": "Item nr 5",
+        "price": "5"
+      }
+    ]
+  }
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="/test" method="GET" resourcePath="/test" id="77d90fd0-6dbf-465c-8c55-f12f38d335f4">
+  <con:settings>
+    <con:setting id="77d90fd0-6dbf-465c-8c55-f12f38d335f4fileName">%2Ftest2</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 1</con:defaultResponse>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath xsi:nil="true"/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer xsi:nil="true"/>
+  <con:routeEnabled>false</con:routeEnabled>
+  <con:conditionalRoutingEnabled>false</con:conditionalRoutingEnabled>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:saveRoutedResponse>false</con:saveRoutedResponse>
+  <con:response name="Response 1" id="fa51e345-fb63-4555-9451-1541a0908439" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Hello" : "Temil" }</con:responseContent>
+  </con:response>
+</con:restMockAction>

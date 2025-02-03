@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" name="/test" method="GET" resourcePath="/test" id="49923de5-9537-4b8e-ac00-1568c31425c4">
+  <con:settings>
+    <con:setting id="b6e40973-6e49-41a5-83fb-684a88a333defileName">%2Ftest</con:setting>
+    <con:setting id="85ae84c1-0d58-4bad-a82d-ea8499dc51ccfileName">%2Ftest</con:setting>
+    <con:setting id="d9f4f17c-93bc-4f69-bf24-ac09bb5f907efileName">%2Ftest</con:setting>
+    <con:setting id="49923de5-9537-4b8e-ac00-1568c31425c4fileName">%2Ftest</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 1</con:defaultResponse>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:response name="Response 1" id="8281b048-4525-4780-b8bc-03f88d44e0ba" httpResponseStatus="200" mediaType="application/json" dataSource="" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070">
+    <con:settings/>
+    <con:responseContent>{ "Hello" : "Temil" }</con:responseContent>
+  </con:response>
+</con:restMockAction>

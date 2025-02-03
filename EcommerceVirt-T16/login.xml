@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction xmlns:con="http://eviware.com/soapui/config" name="login" method="GET" resourcePath="/login" id="d9d3bcb3-7f64-48e6-ac1b-b42932d0afaa">
+  <con:settings>
+    <con:setting id="82d0d51b-1cc5-4a16-835e-f1da0547efbdfileName">login</con:setting>
+    <con:setting id="4077dc9c-a527-48c0-95c5-60e8836de5f7fileName">login</con:setting>
+    <con:setting id="9c9c8dde-565f-4639-b480-3e94fb8998c9fileName">login</con:setting>
+    <con:setting id="b5ff520b-81d0-4656-a25f-e6b9aea3c01ffileName">login</con:setting>
+    <con:setting id="d9d3bcb3-7f64-48e6-ac1b-b42932d0afaafileName">login</con:setting>
+  </con:settings>
+  <con:defaultResponse>OK Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
+if (!queryString) {
+    return "Missing required query parameters"
+}
+
+String[] fields = queryString.split("&amp;");
+String[] kv;
+
+HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+for (int i = 0; i &lt; fields.length; ++i){
+    kv = fields[i].split("=");
+    if (2 == kv.length)
+     params.put(kv[0], kv[1]); 
+}
+
+def username = params.get("username")
+def password = params.get("password")
+def sum = username + password
+
+// validate
+//if( sum.length() > 25 || sum.length() &lt; 10 || !username.startsWith("Login") || !password.endsWith( "123" ))
+// return "Invalid Login Fault"
+
+//if( context.hasProperty( sum ))
+// return "Already Logged In Fault"
+
+// seems ok
+def sessionid = String.valueOf( Math.random() ).substring( 2 )
+
+context.setProperty( sum, sessionid )
+context.setProperty( sessionid, sum )
+
+requestContext.sessionid = sessionid
+return "Ok Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:requestRouteScript/>
+  <con:response name="OK Response" id="51ed4aa9-55da-43f9-9702-da298f39e0df" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "sessionid" : "${sessionid}" }</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Login Fault" id="9d34b492-731a-41c9-88bd-36627b4d7756" httpResponseStatus="401" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Invalid Login" : "The login credentials are invalid&lt;/sam:loginFault" }</con:responseContent>
+  </con:response>
+  <con:response name="Already Logged In Fault" id="d7e3c507-051f-420b-ba46-7cd5b19898cd" httpResponseStatus="401" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Already Logged In" : "The specified credentials are already logged in" }</con:responseContent>
+  </con:response>
+</con:restMockAction>

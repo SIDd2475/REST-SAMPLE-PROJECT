@@ -5,7 +5,7 @@
     <con:setting id="4077dc9c-a527-48c0-95c5-60e8836de5f7fileName">login</con:setting>
   </con:settings>
   <con:defaultResponse>OK Response</con:defaultResponse>
-  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchStyle>QUERY_MATCH</con:dispatchStyle>
   <con:dispatchConfig/>
   <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
 if (!queryString) {

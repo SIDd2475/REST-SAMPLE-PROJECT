@@ -5,7 +5,7 @@
     <con:setting id="9d18978b-2c80-4d62-928a-b052e23e798cfileName">logout</con:setting>
   </con:settings>
   <con:defaultResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">OK Response</con:defaultResponse>
-  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchStyle>QUERY_MATCH</con:dispatchStyle>
   <con:dispatchConfig/>
   <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
 if (!queryString) {
