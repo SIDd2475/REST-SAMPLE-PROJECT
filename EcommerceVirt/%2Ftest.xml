@@ -5,7 +5,7 @@
     <con:setting id="85ae84c1-0d58-4bad-a82d-ea8499dc51ccfileName">%2Ftest</con:setting>
   </con:settings>
   <con:defaultResponse>Response 1</con:defaultResponse>
-  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchStyle>RANDOM</con:dispatchStyle>
   <con:dispatchConfig/>
   <con:dispatchXPath/>
   <con:routeScript/>
