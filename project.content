@@ -5,8 +5,13 @@ Ecommerce\search.xml
 Sample-REST-Test-Suite\Simple-Login-Call.xml
 Sample-REST-Test-Suite\Integration-Test.xml
 Sample-REST-Test-Suite\DataDriven-REST-Test.xml
-EcommerceVirt\%2Ftest.xml
 EcommerceVirt\buy.xml
 EcommerceVirt\login.xml
 EcommerceVirt\logout.xml
 EcommerceVirt\search.xml
+EcommerceVirt\%2Ftest.xml
+EcommerceVirt-2\buy.xml
+EcommerceVirt-2\login.xml
+EcommerceVirt-2\logout.xml
+EcommerceVirt-2\search.xml
+EcommerceVirt-2\%2Ftest.xml
